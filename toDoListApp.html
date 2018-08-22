@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<link rel="stylesheet" type="text/css" href="todoListcss.css">
+</head>
+<body>
+<script src="toDoListApp.js"></script>
+<div ng-app="myToDoList" ng-cloak ng-controller="myCtrl" class="mystyle-card-2 mystyle-margin" style="max-width:400px;">
+  <header class="mystyle-container mystyle-light-blue mystyle-padding-16">
+    <h3>To do List</h3>
+  </header>
+  <ul class="mystyle-ul">
+    <li ng-repeat="x in products" class="mystyle-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="mystyle-right mystyle-margin-right">×</span></li>
+  </ul>
+  <div class="mystyle-container mystyle-light-blue mystyle-padding-16">
+    <div class="mystyle-row mystyle-margin-top">
+      <div class="mystyle-col s10">
+        <input placeholder="Add new items here" ng-model="addMe" class="mystyle-input mystyle-border mystyle-padding">
+      </div>
+      <div class="mystyle-col s2">
+        <button ng-click="addItem()" class="mystyle-btn mystyle-padding mystyle-indigo">Add</button>
+      </div>
+    </div>
+    <p class="mystyle-text-red">{{errortext}}</p>
+  </div>
+</div>
+</body>
+</html>
